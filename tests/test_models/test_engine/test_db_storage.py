@@ -98,7 +98,7 @@ class TestDBStorage(unittest.TestCase):
 
         session = models.starage._DBStorage__session
 
-        retrieved_state = session.query(State).filter_by(id=new_state.id).first()
+        retrieved_state = session.query(State).filter_by(id=new_state.id).first() # noqa
 
         self.assertEqual(retrieved_state.id, new_state.id)
         self.assertEqual(retrieved_state.name, new_state.name)
@@ -116,7 +116,7 @@ class TestDBStorage(unittest.TestCase):
         models.storage.save()
 
         session = models.starage._DBStorage__session
-        retrieved_state = session.query(State).filter_by(id=new_state.id).first()
+        retrieved_state = session.query(State).filter_by(id=new_state.id).first() # noqa
 
         self.assertEqual(retrieved_state.id, new_state.id)
         self.assertEqual(retrieved_state.name, new_state.name)
